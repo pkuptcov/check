@@ -17,12 +17,10 @@ def check_status():
         r = requests.get(hostname)
         # если что-то не в порядке уведомляем нас об этом средствами бота
         if r.status_code != 200:
-            bot.send_message(your_chat_id, ' Ошибка на сайте Петрович ' + str(r.status_code))
+            bot.send_message(your_chat_id, ' Ошибка ' + str(r.status_code) + ' на сайте Петрович')
         # возвращать нам ничего не обязательно
-        #pass
+        pass
 
-        else:
-            bot.send_message(your_chat_id, ' Ошибка на сайте Петрович ' + str(r.status_code))
 
     # применяем функцию проверки к целевому сайту
     check_200("https://petrovich.ru/")
