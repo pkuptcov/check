@@ -26,7 +26,7 @@ def check_status():
     check_200("https://petrovich.ru/")
     #check_200("https://b2b.stdp.ru/")
 
-    time.sleep(5)
+    time.sleep(10)
 
 while True:
     check_status()
