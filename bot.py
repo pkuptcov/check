@@ -40,7 +40,7 @@ def check_status():
     check_petrovich("https://petrovich.ru/")
     check_b2b("https://b2b.stdp.ru/")
 
-    time.sleep(20)
+    time.sleep(10)
 
 while True:
     check_status()
