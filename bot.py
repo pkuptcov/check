@@ -10,22 +10,37 @@ def check_status():
     your_chat_id = 318882951
 
     # функция проверки сайта
-    def check_200(hostname):
+    def check_petrovich(hostname):
         # создаем экземпляр бота
         bot = telebot.TeleBot(token)
         # делаем запрос к сайту
         r = requests.get(hostname)
         # если что-то не в порядке, уведомляем нас об этом средствами бота
         if r.status_code != 200:
-            bot.send_message(your_chat_id, ' Ошибка ' + str(r.status_code) + ' на сайте Петрович')
+            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
         # возвращать нам ничего не обязательно
         else:
-            pass
+            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
+        #pass
+
+    def check_b2b(hostname):
+        # создаем экземпляр бота
+        bot = telebot.TeleBot(token)
+        # делаем запрос к сайту
+        r = requests.get(hostname)
+        # если что-то не в порядке, уведомляем нас об этом средствами бота
+        if r.status_code != 200:
+            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
+        # возвращать нам ничего не обязательно
+        else:
+            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
+        #pass
 
     # применяем функцию проверки к целевому сайту
-    check_200("https://petrovich.ru/")
+    check_petrovich("https://petrovich.ru/")
+    check_b2b("https://b2b.stdp.ru/")
 
-    time.sleep(10)
+    time.sleep(20)
 
 while True:
     check_status()
