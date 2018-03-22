@@ -42,5 +42,5 @@ def check_status():
 
     time.sleep(10)
 
-while True or False:
+while True:
     check_status()
