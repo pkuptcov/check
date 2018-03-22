@@ -15,7 +15,7 @@ def check_status():
         bot = telebot.TeleBot(token)
         # делаем запрос к сайту
         r = requests.get(hostname)
-        # если что-то не в порядке, уведомляем нас об этом средствами бота
+        # если что-то не в порядке уведомляем нас об этом средствами бота
         if r.status_code != 200:
             bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
         # возвращать нам ничего не обязательно
