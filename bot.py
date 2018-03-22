@@ -19,7 +19,8 @@ def check_status():
         if r.status_code != 200:
             bot.send_message(your_chat_id, ' Ошибка ' + str(r.status_code) + ' на сайте Петрович')
         # возвращать нам ничего не обязательно
-        pass
+        else:
+            pass
 
     # применяем функцию проверки к целевому сайту
     check_200("https://petrovich.ru/")
