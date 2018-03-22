@@ -19,9 +19,9 @@ def check_status():
         if r.status_code != 200:
             bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
         # возвращать нам ничего не обязательно
-        else:
-            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
-        #pass
+        pass
+        # else:
+            # bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
 
     def check_b2b(hostname):
         # создаем экземпляр бота
@@ -32,9 +32,9 @@ def check_status():
         if r.status_code != 200:
             bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
         # возвращать нам ничего не обязательно
-        else:
-            bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
-        #pass
+        pass
+        # else:
+            # bot.send_message(your_chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
 
     # применяем функцию проверки к целевому сайту
     check_petrovich("https://petrovich.ru/")
