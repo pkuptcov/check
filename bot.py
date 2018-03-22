@@ -21,10 +21,8 @@ def check_status():
         # возвращать нам ничего не обязательно
         pass
 
-
     # применяем функцию проверки к целевому сайту
     check_200("https://petrovich.ru/")
-    #check_200("https://b2b.stdp.ru/")
 
     time.sleep(10)
 
