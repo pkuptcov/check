@@ -25,7 +25,7 @@ def check_b2b():
 def check_time():
     r = requests.get("https://b2b.stdp.ru/").elapsed.total_seconds()
     if r > 1:
-        bot.send_message(chat_id, 'Время ответа от сервера ' + str(r) + ' s')
+        bot.send_message(chat_id, 'Время ответа сервера ' + str(r) + ' s')
     pass
 
     time.sleep(5)
