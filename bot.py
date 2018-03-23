@@ -4,7 +4,7 @@ import time
 
 
 token = '595308349:AAE9f0xyzRWc21o0jLlbiB5ixXgiQB8ilkA'
-chat_id = 318882951
+chat_id = -1001228160397
 bot = telebot.TeleBot(token)
 
 
