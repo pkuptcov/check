@@ -28,7 +28,7 @@ def check_time():
         bot.send_message(chat_id, 'Время ответа сервера ' + str(r) + ' s')
     pass
 
-    time.sleep(5)
+    time.sleep(10)
 
 while True:
     check_petrovich()
