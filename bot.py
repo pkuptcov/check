@@ -19,7 +19,7 @@ def check_petrovich():
 def check_b2b():
     r = requests.get("https://b2b.stdp.ru/")
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + '  на сайте Б2Б')
     pass
 
 
