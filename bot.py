@@ -3,7 +3,7 @@ import requests
 import time
 
 
-token = ''
+token = '595308349:AAE9f0xyzRWc21o0jLlbiB5ixXgiQB8ilkA'
 chat_id = -1001228160397
 # chat_id = 318882951
 bot = telebot.TeleBot(token)
@@ -37,10 +37,17 @@ def check_petrovichclub():
     pass
 
 
-def check_time():
+def check_time_petrovich():
     r = requests.get("https://petrovich.ru/").elapsed.total_seconds()
     if r > 5:
-        bot.send_message(chat_id, 'Время ответа сервера ' + str(r) + ' s')
+        bot.send_message(chat_id, 'Время ответа сервера Петрович ' + str(r) + ' s')
+    pass
+
+
+def check_time_b2b():
+    r = requests.get("https://b2b.stdp.ru/").elapsed.total_seconds()
+    if r > 5:
+        bot.send_message(chat_id, 'Время ответа сервера Б2Б ' + str(r) + ' s')
     pass
 
 
@@ -50,4 +57,5 @@ while True:
     check_b2b()
     check_propetrovich()
     check_petrovichclub()
-    check_time()
+    check_time_petrovich()
+    check_time_b2b()
