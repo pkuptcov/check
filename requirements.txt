@@ -1,2 +1,2 @@
-pyTelegramBotAPI==3.6.1
+pyTelegramBotAPI==3.6.2
 requests[security]==2.18.4
