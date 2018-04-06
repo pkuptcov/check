@@ -3,7 +3,7 @@ import requests
 import time
 
 
-token = ''
+token = '595308349:AAE9f0xyzRWc21o0jLlbiB5ixXgiQB8ilkA'
 chat_id = -1001228160397
 # chat_id = 318882951
 bot = telebot.TeleBot(token)
@@ -64,7 +64,7 @@ def check_time_b2b():
 
 
 while True:
-    time.sleep(30)
+    time.sleep(10)
     check_petrovich()
     time.sleep(1)
     check_b2b()
