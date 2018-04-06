@@ -11,7 +11,7 @@ bot = telebot.TeleBot(token)
 
 def check_petrovich():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovich.ru/", headers=headers)
     if r.status_code != 200:
         bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
@@ -20,7 +20,7 @@ def check_petrovich():
 
 def check_b2b():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://b2b.stdp.ru/", headers=headers)
     if r.status_code != 200:
         bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
@@ -29,7 +29,7 @@ def check_b2b():
 
 def check_propetrovich():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://propetrovich.ru/", headers=headers)
     if r.status_code != 200:
         bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Пропетрович')
@@ -38,7 +38,7 @@ def check_propetrovich():
 
 def check_petrovichclub():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovichclub.ru/", headers=headers)
     if r.status_code != 200:
         bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Клуб Друзей Петровича')
@@ -47,7 +47,7 @@ def check_petrovichclub():
 
 def check_time_petrovich():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovich.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
         bot.send_message(chat_id, 'Время ответа сервера Петрович ' + str(r) + ' s')
@@ -56,7 +56,7 @@ def check_time_petrovich():
 
 def check_time_b2b():
     headers = requests.utils.default_headers()
-    headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://b2b.stdp.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
         bot.send_message(chat_id, 'Время ответа сервера Б2Б ' + str(r) + ' s')
@@ -66,8 +66,14 @@ def check_time_b2b():
 while True:
     time.sleep(30)
     check_petrovich()
+    time.sleep(1)
     check_b2b()
+    time.sleep(1)
     check_propetrovich()
+    time.sleep(1)
     check_petrovichclub()
+    time.sleep(1)
     check_time_petrovich()
+    time.sleep(1)
     check_time_b2b()
+    time.sleep(1)
