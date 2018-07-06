@@ -32,7 +32,7 @@ def check_propetrovich():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://propetrovich.ru/", headers=headers)
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Биржа профессионалов')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Биржа профессионалов https://propetrovich.ru/')
     pass
 
 
