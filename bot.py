@@ -12,19 +12,23 @@ bot = telebot.TeleBot(token)
 def check_petrovich():
     headers = requests.utils.default_headers()
     headers['User-Agent'] = 'petrovich-helper-bot'
-    r = requests.get("https://petrovich.ru/", headers=headers)
-    if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович \nhttps://petrovich.ru/')
-    pass
+    try:
+        r = requests.get("https://petrovich.ru/", headers=headers)
+        if r.status_code != 200:
+            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Петрович')
+    except requests.exceptions.ConnectionError as error:
+        bot.send_message(chat_id, error)
 
 
 def check_b2b():
     headers = requests.utils.default_headers()
     headers['User-Agent'] = 'petrovich-helper-bot'
-    r = requests.get("https://b2b.stdp.ru/", headers=headers)
-    if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б \nhttps://b2b.stdp.ru/')
-    pass
+    try:
+        r = requests.get("https://b2b.stdp.ru/", headers=headers)
+        if r.status_code != 200:
+            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Б2Б')
+    except requests.exceptions.ConnectionError as error:
+        bot.send_message(chat_id, error)
 
 
 def check_propetrovich():
@@ -32,7 +36,7 @@ def check_propetrovich():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://propetrovich.ru/", headers=headers)
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Биржа профессионалов \nhttps://propetrovich.ru/')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Биржа профессионалов')
     pass
 
 
@@ -41,7 +45,7 @@ def check_petrovichclub():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovichclub.ru/", headers=headers)
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Клуб Друзей Петровича \nhttps://petrovichclub.ru/')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте Клуб Друзей Петровича')
     pass
 
 
@@ -50,7 +54,7 @@ def check_time_petrovich():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovich.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
-        bot.send_message(chat_id, 'Время ответа сервера Петрович ' + str(r) + ' s' + '\nhttps://petrovich.ru/')
+        bot.send_message(chat_id, 'Время ответа сервера Петрович ' + str(r) + ' s')
     pass
 
 
@@ -59,7 +63,7 @@ def check_time_b2b():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://b2b.stdp.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
-        bot.send_message(chat_id, 'Время ответа сервера Б2Б ' + str(r) + ' s' + '\nhttps://b2b.stdp.ru/')
+        bot.send_message(chat_id, 'Время ответа сервера Б2Б ' + str(r) + ' s')
     pass
 
 
