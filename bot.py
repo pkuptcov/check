@@ -15,7 +15,7 @@ def check_petrovich():
     try:
         r = requests.get("https://petrovich.ru/", headers=headers)
         if r.status_code != 200:
-            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте **Петрович**')
+            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте *Петрович*', parse_mode="Markdown")
     except requests.exceptions.ConnectionError as error:
         bot.send_message(chat_id, error)
 
@@ -26,7 +26,7 @@ def check_b2b():
     try:
         r = requests.get("https://b2b.stdp.ru/", headers=headers)
         if r.status_code != 200:
-            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте **Б2Б**')
+            bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте *Б2Б*', parse_mode="Markdown")
     except requests.exceptions.ConnectionError as error:
         bot.send_message(chat_id, error)
 
@@ -36,7 +36,7 @@ def check_propetrovich():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://propetrovich.ru/", headers=headers)
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте **Биржа профессионалов**')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте *Биржа профессионалов*', parse_mode="Markdown")
     pass
 
 
@@ -45,7 +45,7 @@ def check_petrovichclub():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovichclub.ru/", headers=headers)
     if r.status_code != 200:
-        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте **Клуб Друзей Петровича**')
+        bot.send_message(chat_id, 'Ошибка ' + str(r.status_code) + ' на сайте *Клуб Друзей Петровича*', parse_mode="Markdown")
     pass
 
 
@@ -54,7 +54,7 @@ def check_time_petrovich():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://petrovich.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
-        bot.send_message(chat_id, 'Время ответа сервера **Петрович** ' + str(round(r, 2)) + ' s')
+        bot.send_message(chat_id, 'Время ответа сервера *Петрович* ' + str(round(r, 2)) + ' s', parse_mode="Markdown")
     pass
 
 
@@ -63,7 +63,7 @@ def check_time_b2b():
     headers['User-Agent'] = 'petrovich-helper-bot'
     r = requests.get("https://b2b.stdp.ru/", headers=headers).elapsed.total_seconds()
     if r > 5:
-        bot.send_message(chat_id, 'Время ответа сервера **Б2Б** ' + str(round(r, 2)) + ' s')
+        bot.send_message(chat_id, 'Время ответа сервера *Б2Б* ' + str(round(r, 2)) + ' s', parse_mode="Markdown")
     pass
 
 
